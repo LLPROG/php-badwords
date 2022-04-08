@@ -9,14 +9,15 @@
 <body>
     <?php 
         $bad_word = $_GET["bad_word"];
-        $stringa = "ciao idiota sei proprio uno idiota";
-        $ast = "***";
+        $my_bad_word = "idiota";
+        $stringa = "ciao " . $my_bad_word . " sei proprio uno " . $my_bad_word;
+        echo '<h1>' . $stringa . '</h1>';
+        echo '<h1> la lunghezza della stringa é: ' . strlen($stringa) . '</h1>';
+        if ( $bad_word == $my_bad_word ) {
+            echo '<h1>nuova stringa: ' . str_ireplace($bad_word, '***', $stringa) . '</h1>';
+            echo '<h1> la lunghezza della stringa é: ' . strlen(str_ireplace($bad_word, '***', $stringa)) . '</h1>';
+        }
     ?>
-
-    <?php echo '<h1>' . $stringa . '</h1>' ?>
-    <?php echo '<h1> la lunghezza della stringa é: ' . strlen($stringa) . '</h1>'; ?>
-
-
 
     <!-- Creare una variabile con un paragrafo di testo a vostra scelta.
     Stampare a schermo il paragrafo e la sua lunghezza.
